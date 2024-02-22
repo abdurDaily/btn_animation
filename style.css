@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#btn{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #6F1E51;
+}
+#btn button{
+    position: relative;
+    padding: 15px 20px;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+}
+#btn button::after{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    content: attr(data-text);
+    color: #fff;
+    background: rgb(34,34,34);
+    mask: url('https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png');
+    mask-size: 3500% 100%;
+    animation: mask-play-reverse 0.5s steps(29) forwards;
+}
+#btn button:hover::after{
+    animation: mask-play 0.5s steps(29) forwards;
+}
+
+
+
+
+@keyframes mask-play{
+    form{
+      mask-position: 0 0;
+    }
+    to{
+        mask-position: 100% 0;
+    }
+}
+
+@keyframes mask-play-reverse{
+    0%{
+      mask-position: 100% 0;
+    }
+    100%{
+        mask-position: 0% 0;
+    }
+}
+
+
+
+
+/* webkit */
+#webkit{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#webkit h1{
+    font-size: 6rem;
+    background: linear-gradient(45deg,#006266, #EE5A24);
+    text-transform: uppercase;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+#webkit img{
+    -webkit-box-reflect: below 20px linear-gradient(transparent 
+    80%, #000);
+}
